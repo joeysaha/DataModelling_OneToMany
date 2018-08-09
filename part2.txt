@@ -1,0 +1,43 @@
+Part 2.1
+
+     +---------+       +-------------+     1+----------+
+     | Actor   |many   | play        +------+ director |
+     | play_id +-------+ director_id |many  +----------+
+    1+----+----+      1+-------------+
+          |
+      +---+----+
+  many|role    |
+      |actor_id|
+      +--------+
+
+ 2.2
+             1      many     1    many                  many       1
+    +---------+    +---------+  +------------------------+      +------------+
+    |pet owner+----+  pet    |  +veterinarian appointment|      +veterinarian|
+    +---------+    |owner_id |  |       pet_id           +------+ clinic_id  |
+                   | breed_id+--+    ^eterinarian_id     |      +-----+------+
+                   +---------+  +------------------------+            |     many
+                       |many                                          |
+                       |1                                             |     1
+                    +-----+                                     +-----+-------+
+                    |breed|                                     |animal clinic|
+                    +-----+                                     +-------------+
+
+
+
+
+  2.3
+
+                                                       1         many
++-------------+       +----------+       +--------------+       +--------------+
+|     chef    +-------+restaurant+-------+   food critic|       |  review      |
+|restaurant_id|       +----------+       |restaurant_id +-------+ critic_id    |
++-------------+        1        1        +--------------+       |publication_id|
+         many                            many                   +----+---------+
+                                                                     |     many
+                                                                     |
+                                                                     |
+                                                                     |    1
+                                                                +----+------+
+                                                                |publication|
+                                                                +-----------+

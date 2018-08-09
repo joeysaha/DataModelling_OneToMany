@@ -1,0 +1,49 @@
+Part 1.1
+                                            +---------------+
+    +-----------------+                     |               |
+    | Customer        | 1             many  | Order         |
+    | email           +---------------------+ order number  |
+    | mailing address |                     | date          |
+    | name            |                     | customer_id   |
+    +-----------------+                     +---------------+
+
+1.2
+   +-------------+             +--------------+
+   |             |             |              |            +--------------+
+   |Person       |             |  Residence   |            | City         |
+   |name         +-------------+  address     +------------+ name         |
+   |age          |many        1|  year built  |many       1| year founded |
+   |residence_id |             |  city_id     |            | pro^ince_id  |
+   +-------------+             +--------------+            +--------------+
+                                                                   |many
+                                                                   |
+                                                                   |
+                                                                   |1
+                                                           +---------------+
+                                 +----------------+        |               |
+                                 |Country         |    many| Province      |
+                                 |name            +--------+ name          |
+                                 |year founded    |1       | year founded  |
+                                 |national animal |        | country_id    |
+                                 +----------------+        +---------------+
+
+
+ 1.3
+
+
+  +-------+     +------------+    +--------------+       +-------------+
+  | Author|1    |  Book      |    |  Hold        |       | Patron      |
+  | name  +-----+  title     |1   |  date placed |      1| name        |
+  +-------+     |  isbn      +----+  book_id     +-------+ card number |
+            many|  author_id |    |  patron_id   |many   | email       |
+                +---+--------+    +--------------+       +-------------+
+                    | 1         many                           |1
+                    |                                          |
+                    |                                          |
+                    |      +-------------+                     |
+                    |      |  Loan       |                     |
+                    |      |  due date   |many                 |
+                    +------+  renewed    +---------------------+
+                      many |  book_id    |
+                           |  patron_id  |
+                           +-------------+
